@@ -1,4 +1,4 @@
-package com.bddpdm_mobileapp.newarchitecture.components;
+package com.bddpdm_mobile_app.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

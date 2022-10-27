@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.bddpdm_mobileapp">
+  package="com.bddpdm_mobile_app">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
