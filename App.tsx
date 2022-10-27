@@ -9,28 +9,32 @@
  */
 
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Provider as PaperProvider, Button} from 'react-native-paper';
+import {NavigationContainer} from '@react-navigation/native';
+import {Provider as PaperProvider} from 'react-native-paper';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {HomePage} from './src/HomePage';
+import {ScanScreen} from './src/CameraScanner';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
-  const style = StyleSheet.create({
-    cameraButton: {
-      width: 150,
-    },
-  });
-
   return (
-    <PaperProvider>
-      <View>
-        <Button
-          style={style.cameraButton}
-          icon="camera"
-          mode="contained"
-          onPress={() => console.log('Pressed')}>
-          Press me
-        </Button>
-      </View>
-    </PaperProvider>
+    <NavigationContainer>
+      <PaperProvider>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="HomePage"
+            component={HomePage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="ScanScreen"
+            component={ScanScreen}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      </PaperProvider>
+    </NavigationContainer>
   );
 };
 
