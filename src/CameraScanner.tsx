@@ -16,6 +16,9 @@ export class ScanScreen extends Component {
             case 'CODE_128':
               getDrugFromCIP(event.data, this.props.navigation);
               break;
+            case 'EAN_13':
+              // Parapharmacie ?
+              break;
             case 'DATA_MATRIX':
               const CIP13 = event.data.substring(
                 event.data.indexOf('010') + 3,
