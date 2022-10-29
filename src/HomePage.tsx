@@ -44,6 +44,7 @@ export class HomePage extends Component {
               title="Libellé"
               content={this.props.route.params.Libelle}
             />
+            <CardInfoDrug title="CIP7" content={this.props.route.params.CIP7} />
             <CardInfoDrug
               title="CIP13"
               content={this.props.route.params.CIP13}
