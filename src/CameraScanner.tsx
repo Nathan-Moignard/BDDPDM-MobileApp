@@ -9,17 +9,19 @@ export class ScanScreen extends Component {
         reactivate={true}
         showMarker={true}
         onRead={event => {
-          console.log(event.data, event.type, event.rawData);
-
           switch (event.type) {
             case 'CODE_128':
               getDrugFromCIP13(event.data, this.props.navigation);
               break;
-            case 'datamatrix':
-              console.log(event.data, event.data.search('010'));
+            case 'DATA_MATRIX':
+              const CIP13 = event.data.substring(
+                event.data.indexOf('010') + 3,
+                event.data.indexOf('010') + 3 + 13,
+              );
+              getDrugFromCIP13(CIP13, this.props.navigation);
               break;
             default:
-              console.log(event.type);
+              console.info(event.data, event.type, event.rawData);
               break;
           }
         }}
